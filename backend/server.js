@@ -8,7 +8,11 @@ const cors = require('cors')
 
 // express app
 const app = express()
-app.use(cors())
+app.use(cors({
+  origin: "http://localhost:4000",
+  methods: "GET,POST,PUT,DELETE",
+  credentials: true,
+}))
 
 // middleware
 app.use(express.json())
