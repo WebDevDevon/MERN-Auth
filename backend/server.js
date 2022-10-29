@@ -9,18 +9,24 @@ const cors = require('cors')
 
 // express app
 
+// middleware
+app.use(express.json())
+
 app.use(cors({
   origin: "*",
   methods: ["GET","POST","PUT","DELETE"],
   credentials: true,
 }))
 
-// middleware
-app.use(express.json())
+
 
 app.use((req, res, next) => {
-  console.log(req.path, req.method)
-  next()
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
 })
 
 // routes
