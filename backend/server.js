@@ -9,8 +9,8 @@ const cors = require('cors')
 // express app
 const app = express()
 app.use(cors({
-  origin: "https://jazzy-biscuit-597390.netlify.app",
-  methods: "GET,POST,PUT,DELETE",
+  origin: "*",
+  methods: ["GET","POST","PUT","DELETE"],
   credentials: true,
 }))
 
