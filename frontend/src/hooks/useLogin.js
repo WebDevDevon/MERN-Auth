@@ -10,9 +10,9 @@ export const useLogin = () => {
     setIsLoading(true)
     setError(null)
 
-    const response = await fetch('http://mern-auth-cpf9jklmp-webdevdevon.vercel.app/api/user/login', {
+    const response = await fetch('https://mern-auth-cpf9jklmp-webdevdevon.vercel.app/api/user/login', {
       method: 'POST',
-      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({ email, password })
     })
     const json = await response.json()
