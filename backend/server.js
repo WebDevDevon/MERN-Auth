@@ -9,7 +9,7 @@ const cors = require('cors')
 // express app
 const app = express()
 app.use(cors({
-  origin: "http://localhost:4000",
+  origin: "https://jazzy-biscuit-597390.netlify.app",
   methods: "GET,POST,PUT,DELETE",
   credentials: true,
 }))
