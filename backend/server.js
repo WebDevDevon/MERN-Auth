@@ -13,19 +13,21 @@ const cors = require('cors')
 app.use(express.json())
 
 app.use(cors({
-  origin: "*",
+  origin: "https://jazzy-biscuit-597390.netlify.app/",
   methods: ["GET","POST","PUT","DELETE"],
   credentials: true,
 }))
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "*");
-  res.setHeader("Access-Control-Allow-Headers", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
+  res.header("Access-Control-Allow-Origin", "https://jazzy-biscuit-597390.netlify.app/");
+  res.header("Access-Control-Allow-Credentials", "true")
+  res.header("Access-Control-Allow-Methods", "GET", "DELETE", "HEAD", "OPTIONS")
+  // res.header("Access-Control-Allow-Methods", "*");
+  // res.header("Access-Control-Allow-Headers", "*");
+  // res.header(
+  //   "Access-Control-Allow-Headers",
+  //   "Origin, X-Requested-With, Content-Type, Accept"
+  // );
   next();
 })
 
