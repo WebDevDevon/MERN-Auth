@@ -20,18 +20,18 @@ app.use(cors())
 //   credentials: true,
 // }))
 
-// app.use((req, res, next) => {
-//   res.header("Access-Control-Allow-Origin", "https://jazzy-biscuit-597390.netlify.app/");
-//   res.header("Access-Control-Allow-Credentials", "true")
-//   res.header("Access-Control-Allow-Methods", "GET", "DELETE", "HEAD", "OPTIONS")
-//   // res.header("Access-Control-Allow-Methods", "*");
-//   // res.header("Access-Control-Allow-Headers", "*");
-//   // res.header(
-//   //   "Access-Control-Allow-Headers",
-//   //   "Origin, X-Requested-With, Content-Type, Accept"
-//   // );
-//   next();
-// })
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://jazzy-biscuit-597390.netlify.app/");
+  res.header("Access-Control-Allow-Credentials", "true")
+  res.header("Access-Control-Allow-Methods", "GET", "DELETE", "POST", "PUT")
+  // res.header("Access-Control-Allow-Methods", "*");
+  // res.header("Access-Control-Allow-Headers", "*");
+  // res.header(
+  //   "Access-Control-Allow-Headers",
+  //   "Origin, X-Requested-With, Content-Type, Accept"
+  // );
+  next();
+})
 
 // routes
 app.use('/api/workouts', workoutRoutes)
