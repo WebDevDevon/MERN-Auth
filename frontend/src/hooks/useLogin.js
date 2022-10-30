@@ -13,7 +13,9 @@ export const useLogin = () => {
     const response = await fetch('https://mernauth-devon.herokuapp.com/api/user/login', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({ email, password })
+      body: JSON.stringify({ email, password }),
+      mode: 'cors',
+      credentials: 'include'
     })
     const json = await response.json()
 
